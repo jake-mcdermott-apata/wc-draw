@@ -3,19 +3,13 @@ import random
 
 # From the wc-spreadsheet.xlsx
 UPPER_TEAMS = [
-    "Spain", "Argentina", "France", "England", "Brazil",
-    "Portugal", "Colombia", "Netherlands", "Ecuador", "Croatia",
-    "Germany", "Norway", "Japan", "Turkey", "Uruguay",
-    "Switzerland", "Senegal", "Belgium", "Mexico", "Paraguay",
-    "Austria", "Morocco", "Canada", "Australia",
+    "Spain", "Argentina", "France", "England", "Brazil", "Portugal", "Colombia", "Netherlands", "Ecuador", "Croatia", "Germany", "Norway",
+     "Japan", "Turkey", "Uruguay", "Switzerland", "Senegal", "Belgium", "Mexico", "Paraguay", "Austria", "Morocco", "Canada", "Australia",
 ]
 
 LOWER_TEAMS = [
-    "Scotland", "Iran", "South Korea", "Algeria", "Panama",
-    "Uzbekistan", "Czechia", "United States", "Sweden", "Jordan",
-    "Egypt", "Ivory Coast", "DR Congo", "Tunisia", "Iraq",
-    "Bosnia and Herzegovina", "New Zealand", "Saudi Arabia", "Cape Verde", "Haiti",
-    "South Africa", "Ghana", "Curaçao", "Qatar",
+    "Scotland", "Iran", "South Korea", "Algeria", "Panama", "Uzbekistan", "Czechia", "United States", "Sweden", "Jordan", "Egypt", "Ivory Coast", 
+    "DR Congo", "Tunisia", "Iraq", "Bosnia and Herzegovina", "New Zealand", "Saudi Arabia", "Cape Verde", "Haiti", "South Africa", "Ghana", "Curaçao", "Qatar",
 ]
 
 participants = [line.strip() for line in open("participants.txt") if line.strip()]
@@ -24,7 +18,7 @@ random.shuffle(participants)
 random.shuffle(UPPER_TEAMS)
 random.shuffle(LOWER_TEAMS)
 
-print("\033[H\033[2J", end="")
+print("\033[H\033[2J", end="") # Clears the terminal screen
 print("+------------------------------------------------------------+")
 print("|           APATA WORLD CUP 2026 DRAW                       |")
 print("+------------------------------------------------------------+")
@@ -51,7 +45,7 @@ for i, person in enumerate(participants):
 print("\033[H\033[2J", end="") # Clears the terminal screen again
 print("🏆 FINAL RESULTS 🏆\n")
 print(f"{'PARTICIPANT':<15} {'UPPER TEAM':<20} {'LOWER TEAM':<20}")
-print("-" * 55)
+print("-" * 67)
 for name, upper, lower in results:
     print(f"{name:<15} {upper:<20} {lower:<20}")
 print("\nGood luck everyone! 🍀")
