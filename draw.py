@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 import random
+import time
+
+random.seed(time.time_ns())
 
 # From the wc-spreadsheet.xlsx
 UPPER_TEAMS = [
@@ -33,6 +36,7 @@ for i, person in enumerate(participants):
     print("\033[H\033[2J", end="") # Clears the terminal screen
     print(f"DRAW {i+1} of {len(participants)}\n")
     print(f"  {person}\n")
+    input("  Press ENTER to reveal teams...")
     print(f"  UPPER:  {UPPER_TEAMS[i]}")
     print(f"  LOWER:  {LOWER_TEAMS[i]}")
     results.append((person, UPPER_TEAMS[i], LOWER_TEAMS[i]))
